@@ -57,6 +57,7 @@ def update_task(task_id: int, todo: Todo):
 
         if task["id"] == task_id:
             task["task"] = todo.task
+            task["status"] = todo.status
 
             return {
                 "message": "Task Updated Successfully",
