@@ -11,6 +11,10 @@ todolst = []
 class Todo(BaseModel):
     task: str
 
+    
+class UpdateTodo(BaseModel):
+    task: str
+    status: str
 
 # Home API
 @app.get("/")
@@ -51,7 +55,7 @@ def view_tasks():
 
 # Update Task
 @app.put("/update/{task_id}")
-def update_task(task_id: int, todo: Todo):
+def update_task(task_id: int, todo: UpdateTodo):
 
     for task in todolst:
 
